@@ -4,19 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="stylesheets/styles.css">
   <title>Document</title>
 </head>
-<body>
-    <form id="petForm">
-      Pet Name:
-      <input id="petName" type="text" name="petName">
-      Location:
-      <input id="zipcode" type="text" name="zipcode">
-      <input type="submit" value="Submit">
-      
-    </form>
+<body></body>
 
-    <div>
+    <div class="container">
+      <form id="petForm">
+        <span class="petName">Animal</span>
+        <select id="petName" name="petName"> 
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
+          Zipcode:
+        <input id="zipcode" type="text" name="zipcode">
+        <input type="submit" value="Find">
+      </form>
+    </div>
+
+    <div class="pet-display-container">
       <ul id="petsListings">
 
       </ul>

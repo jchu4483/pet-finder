@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -o stylesheets stylesheets/styles.scss -w",
+    "parcel": "parcel index.html"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,8 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "fetch-jsonp": "^1.1.3",
-    "parcel-bundler": "^1.9.7"
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.9.7",
+    "validate": "^4.4.1"
   }
 }

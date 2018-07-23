@@ -1,7 +1,7 @@
 import fetchJsonp from 'fetch-jsonp';
 import { isValidZip } from './validate';
 
-const apiKey = '97e3f6aacd9490ea9406074d72195328';
+const apiKey = '';
 const petForm = document.querySelector('#petForm');
 petForm.addEventListener('submit', handleForm);
 

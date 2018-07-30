@@ -10,17 +10,18 @@ router.get('/', (req, res) => {
     const petName = 'dog'
     const zipcode = '11370'
 
-    fetch(`http://api.petfinder.com/pet.find?format=json&key=${apiKey}&animal=${petName}&location=${zipcode}`)
+   fetch(`http://api.petfinder.com/pet.find?format=json&key=${apiKey}&animal=${petName}&location=${zipcode}`)
       .then(res => res.json())
       .then(data => handlePetResponse(data.petfinder.pets.pet))
       .catch(err => console.log(err))
   }
   handleForm();
   function handlePetResponse(pets) {
-    console.log(pets)
-
+    var petData = pets;
+    console.log(petData);
+    res.render('index', { petData: petData })
   }
-  res.render('index')
+  
 });
 
 module.exports = router;

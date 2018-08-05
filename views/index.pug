@@ -10,7 +10,7 @@
 <body></body>
 
     <div class="container">
-      <form id="petForm">
+      <form id="petForm" action="/search" method="GET">
         <span class="petName">Animal</span>
         <select id="petName" name="petName"> 
           <option value="dog">Dog</option>
@@ -24,14 +24,8 @@
 
     <div class="pet-display-container">
       <ul id="petsListings">
-        
       </ul>
     </div>
-
-    ul
-      each pet in petData
-        li= pet.name.$t
-
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>

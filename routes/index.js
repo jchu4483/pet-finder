@@ -1,27 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const fetch = require('node-fetch');
-const apiKey = '97e3f6aacd9490ea9406074d72195328';
+const fetch = require('node-fetch')
 
 // Do work here
-router.get('/', (req, res) => {
+router.get('/search', (req, res, next) => {
+  const apiKey = '97e3f6aacd9490ea9406074d72195328';
+  const petName = req.query.petName;
+  const zipcode = req.query.zipcode
 
-  function handleForm() {
-    const petName = 'dog'
-    const zipcode = '11370'
-
-   fetch(`http://api.petfinder.com/pet.find?format=json&key=${apiKey}&animal=${petName}&location=${zipcode}`)
-      .then(res => res.json())
-      .then(data => handlePetResponse(data.petfinder.pets.pet))
-      .catch(err => console.log(err))
-  }
-  handleForm();
+  fetch(`http://api.petfinder.com/pet.find?format=json&key=${apiKey}&animal=${petName}&location=${zipcode}`)
+    .then(res => res.json())
+    .then(data => handlePetResponse(data.petfinder.pets.pet))
+    .catch(err => console.log(err)
+  )
   function handlePetResponse(pets) {
-    var petData = pets;
-    console.log(petData);
-    res.render('index', { petData: petData })
+    console.log(pets)
+    res.render('show', {
+      pets: pets
+    })
   }
-  
+
+})
+
+
+router.get('/', (req, res) => {
+  res.render('index')
 });
+
+
 
 module.exports = router;
